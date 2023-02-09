@@ -1,26 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-.homepage{
-    font-family: 'Dancing Script', cursive;
-    background-color: antiquewhite;
-    position: absolute;
-    width: 99%;
-    height: auto;
-    max-width: 100%;
-    max-height: auto;
-    border-radius: 10px;
-    color: black;
-}
 .heading{
-    display: block;
-    
-}
-.headingtitle{
-    position: relative;
-    width: 25%;
-    height: auto;
-    margin-left: 43%;
+    display: flex;
+    align-items: center;
     justify-content: center;
+}
+
+.headingtitle{
     font-size: 38px;
-    
+    width: 100%;
+    text-align: center;
+}
+.addtocart{
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .addtocart:hover {
+    transform: scale(1.1);
+  }
+  
+  .addtocart.adding {
+    background-color: yellow;
+    color: black;
+    animation: adding 0.5s forwards;
+  }
+  
+  @keyframes adding {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.5);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+
+  .addtocartClicked {
+    animation: shake 0.5s ease;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-10px, 0); }
+    20% { transform: translate(10px, 0); }
+    30% { transform: translate(-10px, 0); }
+    40% { transform: translate(10px, 0); }
+    50% { transform: translate(-10px, 0); }
+    60% { transform: translate(10px, 0); }
+    70% { transform: translate(-10px, 0); }
+    80% { transform: translate(10px, 0); }
+    90% { transform: translate(-10px, 0); }
+    100% { transform: translate(0, 0); }
+  }
+  .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightgreen;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }  
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .headingtitle {
+    font-size: 28px;
+  }
 }

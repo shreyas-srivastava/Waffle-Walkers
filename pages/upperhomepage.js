@@ -1,25 +1,27 @@
 import styles from "../styles/Home.module.css";
 import Cart from "./cart";
+import Link from 'next/link';
 function Homepage() {
   return (
     <>
-    <div className={styles.heading}>
+    <div>
     <h1 className={styles.headingtitle}>Waffle Walkers</h1>
     </div>
     <div>
     <header style={{ padding: '20px' }}>
-          <h1>Food Delivery</h1>
           <nav>
             <ul>
-              <li><a href="#menu">Menu</a></li>
-              <li><a href="#about">About</a></li>
+              <li><Link href="/ContactUs">Menu</Link></li>
+              <li><a href="#abo">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
         </header>
-    <main style={{ padding: '20px' }}>
-      <h2>Welcome to Food Delivery</h2>
-      <p>We offer a variety of delicious meals from top restaurants delivered straight to your door.</p>
+    <main style={{ padding: '20px', fontSize: '22px' }}>
+      <h2>Welcome to Waffle Walkers</h2>
+      <p>Welcome to Waffle Walkers, the premier destination for all things waffles in Vellore! Conveniently located near the famous Vellore Institute of Technology, we're a homegrown company that's passionate about delivering the freshest, most delicious waffles to our customers. 
+        With more than 20 types of waffles on our menu, there's something for everyone, whether you prefer your waffles sweet or savory, classic or inventive. Come visit us to enjoy a hot, fresh waffle on the go, or have it delivered right to your door. 
+        Your support of our small business is what keeps us going, and we look forward to serving you soon!</p>
     </main>
     <h1>Waffle Menu</h1>
     <Cart></Cart>
