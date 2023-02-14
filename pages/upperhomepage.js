@@ -11,9 +11,10 @@ function Homepage() {
     <header style={{ padding: '20px' }}>
           <nav>
             <ul>
-              <li><Link href="/ContactUs">Menu</Link></li>
-              <li><a href="#abo">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link href="#menu">Menu</Link></li>
+              <li><Link href="#about">About</Link></li>
+              <li><Link href="/ContactUs">Contact</Link></li>
+              <li><Link href="/Imagetab">Images</Link></li>
             </ul>
           </nav>
         </header>
@@ -25,7 +26,8 @@ function Homepage() {
     </main>
     <h1>Waffle Menu</h1>
     <Cart></Cart>
-    <footer style={{ marginLeft : '45%' }}>
+
+    <footer className={styles.copyright}>
         <p>Copyright © 2023 Waffle Walkers</p>
     </footer>
     </div>

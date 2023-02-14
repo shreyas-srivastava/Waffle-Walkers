@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
+import CartImg from '../public/cart.svg';
+import Image from 'next/image';
 
 const waffles = [
   { id: 1, name: "Mapple Butter", price: 79 },
@@ -85,24 +87,31 @@ const Cart = () => {
     <div>
       {waffles.map((waffle) => (
         <div key={waffle.id}>
-          <p>
+
+        <div className={styles.waffleitem}>
+          <div className={styles.wafflenme}>
+          <p className={styles.wafflelist}>
             {waffle.name} - ₹{waffle.price}
           </p>
+          </div>
 
+          <div className={styles.addbutton}>
           <button
             className={`${styles.addtocart} ${
               buttonClicked ? styles.addtocartClicked : ""
             }`}
             onClick={() => addToCart(waffle)}
           >
-            Add to Cart</button>
-        </div>
+            ADD</button>
+            </div>
+            </div>
+            </div>
       ))}
       <div
         onClick={toggleCart}
         style={{ position: "fixed", top: 10, right: 10 }}
       >
-        Cart ({cart.reduce((acc, cur) => acc + cur.count, 0)})
+        <Image src={CartImg} alt="Cart"/>({cart.reduce((acc, cur) => acc + cur.count, 0)})
       </div>
       {showCart && (
         <div
@@ -115,13 +124,18 @@ const Cart = () => {
           }}
         >
           <h2>Cart</h2>
+          
           <ul>
             {cart.map((item) => (
+              
               <li key={item.id}>
+                <div className={styles.cartoption}>
                 {item.name} - ₹{item.price} x {item.count} = ₹
                 {item.price * item.count}
-                <button onClick={() => removeFromCart(item)}>Remove</button>
+                <button onClick={() => removeFromCart(item)} className={styles.removebtn}>X</button>
+                </div>
               </li>
+              
             ))}
           </ul>
           <p>
